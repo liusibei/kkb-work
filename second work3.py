@@ -14,3 +14,11 @@ def Fibonacci_sequence(n):
     return F
 
 print(Fibonacci_sequence(6))  
+
+
+def Fibonacci_sequence(n):
+    F = [0,1]
+    for i in range(n-1):
+        F.append(sum(F[-2:]))
+    return F[1:]
+print(Fibonacci_sequence(1)) 
