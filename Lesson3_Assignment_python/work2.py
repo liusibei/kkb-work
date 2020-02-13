@@ -5,7 +5,7 @@ def print_string(*string1,sep = ' ',end = '\n'):
 
 print(print_string('This is a test')) #返回This is a test\n
 
-print(print_string('This', 'is', 'a', 'test', sep = '-')) #返回This-is-a-test\n
+print(print_string('This', 'is', 'a', 'test')) #返回This-is-a-test\n
 
 print(print_string('This', 'is', 'a', 'test', sep = '-')) #返回This-is-a-test\n
 
