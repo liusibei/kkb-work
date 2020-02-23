@@ -39,6 +39,3 @@ class Weapon:
         hro.damage+=self.damage
         print("{}的攻击力变为{}".format(hro.name, hro.damage))
         
-LB = Hero("吕布", 20, 100, "群雄")
-FTHJ = Weapon("方天画戟",120)
-FTHJ.take_weapon(LB)
