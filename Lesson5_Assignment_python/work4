@@ -1,0 +1,46 @@
+#角色父类
+class People:
+    def __init__(self, name, damage, hp):
+        self.name=name
+        self.damage=damage
+        self.hp=hp
+
+#继承角色父类，实例基本信息，攻击方法
+class Hero(People):
+    def __init__(self, name, damage, hp, country):
+        People.__init__(self, name, damage, hp)
+        self.country=country   
+        
+    def get_inf(self):
+        print("姓名：{}".format(self.name))
+        print("攻击力：{}".format(self.damage))
+        print("当前血量：{}".format(self.hp))
+        print("阵营：{}".format(self.country))
+
+    def attack(self,enemy):
+        print(self.name)
+        print("攻击力为：{}".format(self.damage))
+        print("{}目前血量为：{}".format(enemy.name, enemy.hp))
+        print("{}攻击{}".format(self.name,enemy.name))
+        enemy.hp-=self.damage
+        print("{}剩余血量为：{}".format(enemy.name, enemy.hp))
+        print("***********************************")
+
+#群英战吕布
+LB=Hero("吕布", 20, 100, "群雄")      
+i = 0
+heros = {}
+while 1:
+    i += 1
+    new_hero = Hero("hero"+str(i), 15, 30, "反吕联盟")
+    heros["hero"+str(i)] = new_hero 
+    while heros["hero"+str(i)].hp > LB.damage:
+        LB.attack(heros["hero"+str(i)])
+        heros["hero"+str(i)].attack(LB)
+    if LB.hp <= heros["hero"+str(i)].damage:
+        print("吕布逃跑，群英胜")
+        print("***********************************")
+        break    
+    if heros["hero"+str(i)].hp <= LB.damage:
+        print(f'hero{str(i)}失败逃跑')
+        print("***********************************")
