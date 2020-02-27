@@ -54,6 +54,8 @@ print(datalist[-1]==['18', '青绿', '硬挺', '浊响', '稍糊', '平坦', '�
         
     
 # 在所有数据中过滤出色泽='浅白'的数据
+with open(file,'a') as f:
+    f.write("\n")
 def func(x):
     s = ','.join(x)+'\n'
     return s
@@ -66,7 +68,10 @@ for i in QB1:
         with open(file,'a') as f:
             f.write(i)
 print('csv file is generated!')
+
 # 在所有数据中过滤出密度大于0.5的数据
+with open(file,'a') as f:
+    f.write("\n")
 MD = list(filter(lambda x:False if x[7]=='密度' else float(x[7])>0.5,datalist))
 MD1 = list(map(func,MD))
 for i in MD1:
