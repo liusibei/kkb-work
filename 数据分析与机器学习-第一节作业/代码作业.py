@@ -26,7 +26,6 @@ def func_knn(c,k=1):
         print(f'{c}分类标签为1')
     elif label_1 < label_2:
         print(f'{c}分类标签为2')
-        
     else:
         print(f'{c}无法判断')
         
